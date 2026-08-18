@@ -1,0 +1,914 @@
+;Final Boss Theme
+;By KungFuFurby
+;Made for undisbeliever's Terrific Audio Driver v0.3.0
+
+#Title Final Boss Theme
+#Game unnamed-snes-game
+#Author KungFuFurby
+#Composer KungFuFurby
+#Copyright 2025 undisbeliever
+#Date 2025
+#License This work by KungFuFurby is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
+
+;WARNING: The global music volume must be kept at its maximum value!
+;This song uses the echo buffer for distortion, and the distortion itself is sensitive to volume changes.
+;WARNING: The echo must be stopped when switching and/or stopping this song!
+;This is because the distortion and/or echo synthesis can accidentally sustain itself where it isn't supposed to otherwise.
+;This would result in a tone being output through the echo buffer like a stuck note instead of the expected decaying reverb effect you would normally hear.
+
+;Echo Parameters
+#DisableFirFilterLimit
+#MaxEchoLength 48
+#EchoLength 0
+#EchoFeedback 0
+#EchoVolume 0
+#FirFilter 0 0 0 0 0 0 0 0
+
+;Instrument Definitions
+@GuitarB2 GuitarB2
+@GuitarB2_A15_7_7_22 GuitarB2 adsr 15 7 7 22
+@Strings8 Strings8
+@Kick3 Kick3
+@Snare02 Snare02
+@HatClosed HatClosed
+@SuperMiniGlitchNoise_A15_7_7_24 SuperMiniGlitchNoise adsr 15 7 7 24
+@SuperMiniGlitchNoise_A15_7_7_26 SuperMiniGlitchNoise adsr 15 7 7 26
+@SuperMiniGlitchNoise_A15_7_7_29 SuperMiniGlitchNoise adsr 15 7 7 29
+@sine_A8_7_7_5 sine adsr 8 7 7 5
+@PIANO_C5 PIANO_C5
+@Pulse32WFF Pulse32WFF
+@Tom5 Tom5
+@Tom5_A15_7_7_18 Tom5 adsr 15 7 7 18
+@trumpet_2 trumpet_2
+@SineWave16Glitch SineWave16Glitch
+@Flute1 Flute1
+@PianoC2_16_A15_7_7_13 PianoC2_16 adsr 15 7 7 13
+@SineWave16 SineWave16
+@SineWave16_A8_7_7_12 SineWave16 adsr 8 7 7 12
+@fingerbass32 fingerbass32
+@SuperMiniGlitchNoise2 SuperMiniGlitchNoise2
+@Crash2_A15_7_7_15 Crash2 adsr 15 7 7 15
+@Crash2_A15_7_7_18 Crash2 adsr 15 7 7 18
+@Triangle16_DBH2_2 Triangle16_DBH2_2
+@Triangle16_DBH3_2 Triangle16_DBH3_2
+@SineWave8 SineWave8
+@Pulse16WFF Pulse16WFF
+@TimpaniB_A15_7_7_13 TimpaniB adsr 15 7 7 13
+@Clarinet Clarinet
+@Pulse8WBF Pulse8WBF
+@Bongo Bongo
+@Pulse8WFF Pulse8WFF
+@Pulse4WFF Pulse4WFF
+
+#Timer 192
+#ZenLen 192
+
+!Kick3_V160 @Kick3 V160
+!Kick3_V160_o5c32 !Kick3_V160 o5c32
+!Kick3_V160_o5c64 !Kick3_V160 o5c64
+!Snare02_V160_o5c64 @Snare02 V160 o5c64
+!Snare02_V160_o5c32 @Snare02 V160 o5c32
+!HatClosed_V96_o5fS32 @HatClosed V96 o5f+32
+!ARiff1a !Kick3_V160_o5c32 @HatClosed V48 o5f+32
+!ARiff1 !ARiff1a !HatClosed_V96_o5fS32 V48 o5f+32
+A [!ARiff1 ]48
+A !Kick3_V160 [o5c4..c16]2
+A [!ARiff1 ]3 !ARiff1a !Kick3_V160 o5c16
+!ARiff2 [!Snare02_V160_o5c32 !Kick3_V160_o5c32 :o5c32]5
+!Snare02_V160_o5c32_o5c32 !Snare02_V160_o5c32 o5c32
+A !ARiff2 !Snare02_V160_o5c32_o5c32
+!SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64 @SuperMiniGlitchNoise_A15_7_7_29 V48 o7b64
+!HatClosed_V48_o5fS64 @HatClosed V48 o5f+64
+!HatClosed_V96_o5fS64 @HatClosed V96 o5f+64
+!ARiff3aa !Kick3_V160_o5c64 !HatClosed_V48_o5fS64 !HatClosed_V96_o5fS64 !SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64
+!ARiff3aba !Snare02_V160_o5c64 !SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64
+!ARiff3ab !ARiff3aba !HatClosed_V96_o5fS64 !HatClosed_V48_o5fS64
+!ARiff3aa_3ab_X3 [!ARiff3aa !ARiff3ab ]3
+!ARiff3aa_3ab_X3_3aa_3ab_Snare !ARiff3aa_3ab_X3 !ARiff3aa !ARiff3aba !Snare02_V160_o5c64
+!o5c96_c5_no_keyoff_1_keyon_next_note o5c96
+!o5c96_c5_no_keyoff_1_keyon_next_note \asm {play_note c5 no_keyoff 1
+                                      keyon_next_note}
+!Snare02_c5_no_keyoff_1_keyon_next_note_X3 @Snare02 !c5_no_keyoff_1_keyon_next_note_X3
+!Kick3_o5c96_c5_no_keyoff_1_keyon_next_note @Kick3 !o5c96_c5_no_keyoff_1_keyon_next_note
+!Snare02_o5c96_c5_no_keyoff_1_keyon_next_note @Snare02 !o5c96_c5_no_keyoff_1_keyon_next_note
+!c5_no_keyoff_1_keyon_next_note_X3 [
+!c5_no_keyoff_1_keyon_next_note_X3 \asm {play_note c5 no_keyoff 1
+                                   keyon_next_note}
+!c5_no_keyoff_1_keyon_next_note_X3 ]3
+
+!ARiff3a !ARiff3aa_3ab_X3_3aa_3ab_Snare
+!ARiff3a !c5_no_keyoff_1_keyon_next_note_X3
+!ARiff3 !ARiff3aa_3ab_X3_3aa_3ab_Snare !HatClosed_V48_o5fS64
+!ARiff3 !ARiff3a
+!ARiff3 !ARiff3aa_3ab_X3
+!ARiff3 !Kick3_V160_o5c64 !HatClosed_V48_o5fS64 !Kick3_V160_o5c64 !SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64
+!ARiff3 !ARiff3aba !Snare02_V160_o5c64 !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 !ARiff3a [
+!ARiff3 !ARiff3aa_3ab_X3_3aa_3ab_Snare !HatClosed_V48_o5fS64 ]3
+!ARiff3 !ARiff3a
+!ARiff3b !Snare02_V160_o5c32 [!Kick3_V160_o5c64 ]10
+!ARiff3 [
+!ARiff3 !ARiff3b !ARiff3b !Snare02_V160_o5c32 !Kick3_V160_o5c32 :o5c32 !Snare02_V160_o5c32 ]2
+!ARiff3 !Snare02_V160_o5c32_o5c32
+!ARiff3 [!ARiff3b !Snare02_V160_o5c32 [!Kick3_V160_o5c64 ]8 !Snare02_V160_o5c64 o5c64
+!ARiff3 !Snare02_V160_o5c32 !Kick3_V160_o5c32 !Snare02_V160_o5c32 :o5c32]2
+!ARiff3 o5c64 !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 [[
+!ARiff3 !ARiff3aa
+!ARiff3 !ARiff3ab
+!ARiff3 !Kick3_V160_o5c64 !HatClosed_V96_o5fS64 !Snare02_V160_o5c64 !HatClosed_V96_o5fS64 ]2
+!ARiff3 !ARiff3aa
+!ARiff3 !ARiff3ab ]2
+!ARiff3 !ARiff3aa_3ab_X3 !ARiff3aa !ARiff3aba !Kick3_V160_o5c64 !Snare02_V160_o5c64
+!ARiff3 !ARiff3aa_3ab_X3_3aa_3ab_Snare
+!ARiff3 !c5_no_keyoff_1_keyon_next_note_X3
+!ARiff3c !Snare02_V160_o5c64 [!Kick3_V160_o5c64 ]3
+!ARiff3 [!ARiff3c ]8
+!ARiff3d !Snare02_o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3d !Kick3_V160_o5c64 o5c64 !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 !ARiff3d
+!ARiff3 [!ARiff3c ]6
+!ARiff3 !Snare02_c5_no_keyoff_1_keyon_next_note_X3
+!ARiff3 !Kick3_o5c96_c5_no_keyoff_1_keyon_next_note 
+!ARiff3 !Snare02_c5_no_keyoff_1_keyon_next_note_X3 !c5_no_keyoff_1_keyon_next_note_X3 [
+!ARiff3 !ARiff3d
+!ARiff3 !Snare02_V160_o5c64 : [!Kick3_V160_o5c64 ]3]4
+!ARiff3 !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 !c5_no_keyoff_1_keyon_next_note_X3 [
+!ARiff3 !Snare02_o5c96_c5_no_keyoff_1_keyon_next_note [
+!ARiff3 !Kick3_o5c96_c5_no_keyoff_1_keyon_next_note  ]3]4 [
+!ARiff3 !Snare02_c5_no_keyoff_1_keyon_next_note_X3
+!ARiff3 @Kick3 [
+!ARiff3 !c5_no_keyoff_1_keyon_next_note_X3
+!ARiff3 ]3 ]3
+!ARiff3 [!Snare02_c5_no_keyoff_1_keyon_next_note_X3 ]4
+!ARiff3 [[!Snare02_V160_o5c64 : [!Kick3_V160_o5c64 ]5]3 [!Kick3_V160_o5c64 ]3]2
+!ARiff3 [[
+!ARiff3 !Snare02_o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff3 : [!Kick3_V160_o5c64 ]5]3 : [!Kick3_V160_o5c64 ]3]2
+!ARiff3 [!Snare02_o5c96_c5_no_keyoff_1_keyon_next_note ]3
+A !ARiff3
+A T160 [
+A @SuperMiniGlitchNoise_A15_7_7_24 V48 o7b32 V24 A15,7,7,29 o7b32 A15,7,7,26 o7b32 A15,7,7,29 o7b32
+A ]128
+A @Crash2_A15_7_7_15 V128 [p48 o3f+4 p96 o3f+4]4 p64
+!ARiff4a !HatClosed_V96_o5fS32 @SuperMiniGlitchNoise_A15_7_7_26 V32 o7b32
+!ARiff4 !ARiff4a !HatClosed_V96_o5fS32
+!Kick3_V160_o5fS32 !Kick3_V160 o5f+32
+!Snare02_V160_o5fS32 @Snare02 V160 o5f+32
+A [!Kick3_V160_o5fS32 !ARiff4
+A ]32 [[
+A !Kick3_V160_o5fS32 !ARiff4
+A !Snare02_V160_o5fS32 !HatClosed_V96_o5fS32
+A @SuperMiniGlitchNoise_A15_7_7_26 V32 o7b32 : !HatClosed_V96_o5fS32 ]8 !Snare02_V160_o5fS32 ]3
+A [
+A !Kick3_V160_o5fS32 !ARiff4
+A !Snare02_V160_o5fS32 !ARiff4 ]4
+!ARiff5 [@Snare02 V160 o5f+64 !HatClosed_V48_o5fS64 !HatClosed_V96_o5fS64 !HatClosed_V48_o5fS64 ]3
+A !ARiff5 !Kick3_V160_o5fS32 o5f+32
+A !ARiff5 !Kick3_V160_o5fS32 !Snare02_V160_o5fS32
+A !ARiff5 !Snare02_V160_o5fS32 o5f+32
+A [!Snare02_V160_o5fS32 !ARiff4a ]2
+A !Snare02_V160_o5c32_o5c32 [[
+!ARiff6 @SuperMiniGlitchNoise_A15_7_7_26 V24 o7b32 A15,7,7,24 V48 o7b32
+A !Kick3_V160_o5c32 !ARiff6 A15,7,7,26 V24 o7b32
+A !Snare02_V160_o5c32 !ARiff6 : A15,7,7,26 V24 o7b32 ]4
+A : !Snare02_V160_o5c32 ]3 !Snare02_V160_o5c64 o5c64
+!ARiff7 [!Snare02_V160_o5c32 !Kick3_V160_o5c32 : o5c32]4
+A !ARiff7 !Snare02_V160_o5c64 o5c64[c32]4
+A !ARiff7 [!Snare02_V160_o5c64 ]10 [
+A !ARiff3aa_3ab_X3 !ARiff3aa :
+A !ARiff3aba !Snare02_V160_o5c64 !HatClosed_V48_o5fS64 ]7
+A [!Snare02_V160_o5c64 ]3 !Kick3_V160_o5c64
+A [!Snare02_V160_o5c32_o5c32 !Kick3_V160_o5c32 o5c32]2
+A [!Snare02_V160_o5c64 ]4 !Kick3_V160_o5c32 o5c32 [!Snare02_V160_o5c64 ]4
+A [!o5c96_c5_no_keyoff_1_keyon_next_note
+A ]4 T155
+A !ARiff3aa_3ab_X3
+A !Kick3_V160_o5c64
+A !HatClosed_V48_o5fS64 !Kick3_V160_o5c64 !SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64
+A !ARiff3aba !Snare02_V160_o5c64 !HatClosed_V48_o5fS64
+A !ARiff3aa_3ab_X3 !Kick3_V160_o5c64
+A [o5c64]3 [!Snare02_V160_o5c64 ]4
+!ARiff8 [[
+!ARiff8 !ARiff3aa_3ab_X3
+!ARiff8 !Kick3_V160_o5c64 !HatClosed_V48_o5fS64 !Kick3_V160_o5c64 !SuperMiniGlitchNoise_A15_7_7_29_V48_o7b64
+!ARiff8 !ARiff3aba !Snare02_V160_o5c64 : !HatClosed_V48_o5fS64 ]3
+!ARiff8 o5c64
+!ARiff8 !ARiff2 [!Snare02_V160_o5c64 ]4 ]2
+A !ARiff8 !ARiff3
+A T150
+A !ARiff8 !ARiff3 T145
+!ARiff9 [[[
+!ARiff9 !Snare02_o5c96_c5_no_keyoff_1_keyon_next_note : [
+!ARiff9 !Kick3_o5c96_c5_no_keyoff_1_keyon_next_note  ]5]3 : [
+!ARiff9 !Kick3_o5c96_c5_no_keyoff_1_keyon_next_note  ]3]2 :
+!ARiff9 !o5c96_c5_no_keyoff_1_keyon_next_note 
+!ARiff9 !Snare02_o5c96_c5_no_keyoff_1_keyon_next_note !o5c96_c5_no_keyoff_1_keyon_next_note
+!ARiff9 ]2 [
+!ARiff9 \asm {play_note c5 no_keyoff 1
+        keyon_next_note} ]9
+A !ARiff9
+A [@Kick3 o5c8[c24]3 @Snare02 o5c8 @Kick3 [o5c24]3]2
+A @Kick3 [o5c24]6 @Snare02 o5c24 @Kick3 [o5c24]5
+A @Kick3 [o5c48]12 @Snare02 [o5c48]6 [o5c96]12
+!ARiff9_8_3_9 !ARiff9 !ARiff8 !ARiff3 !ARiff9
+A !ARiff8 !ARiff3 T140 !ARiff9 T135
+A !ARiff9_8_3_9 T130
+A !ARiff9_8_3_9 T125
+A !ARiff9_8_3_9 T120
+A !ARiff9_8_3_9 T115
+A !ARiff9_8_3_9 T110
+A !ARiff9_8_3_9 T105
+A !ARiff9_8_3_9 T100
+A !ARiff9_8_3_9 T95
+A !ARiff9_8_3_9 T90
+A !ARiff9_8_3_9 T85
+A !ARiff9_8_3_9 T80
+A !ARiff9_8_3_9 T75
+A !ARiff9_8_3_9 T70 L
+A !ARiff9_8_3_9 T65
+
+B @Pulse32WFF GI1 V0 o2c+1& GI0 r1
+!Strings8_V24 @Strings8 V24
+B !Strings8_V24 GIT4 p48 o4g+1a1b1>c+1
+!fir_0_0_0_127_0_127_0_127 \fir {0 0 0 127 0 127 0 127}
+B !fir_0_0_0_127_0_127_0_127 \evol 4
+!GuitarB2_V24_E1 @GuitarB2 V24 E1
+B !GuitarB2_V24_E1
+!ftapM_3_1_w192 \ftap- 3, 1 w192
+!ftapM_5_1_w192 \ftap- 5, 1 w192
+!ftapM_3_1_w192_ftapM_5_1_w192 !ftapM_3_1_w192 !ftapM_5_1_w192
+!ftapM_7_1 \ftap- 7, 1
+!ftapM_7_1_r96 !ftapM_7_1 r96
+!ftap_3_127_ftap_5_127_ftap_7_127 \ftap 3,127 \ftap 5,127 \ftap 7,127
+!BRiff1aaa \efb 65 o3c+96& \efb- 1 w96 \efb- 1 r96
+!BRiff1aa \efb 66 o4c+96& [!ftapM_3_1_w192_ftapM_5_1_w192 !ftapM_7_1 : w192]3 r96
+!BRiff1aa !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff1aa !BRiff1aaa
+!BRiff1a !BRiff1aaa !BRiff1aaa
+!BRiff1a !BRiff1aa
+!BRiff1a __-2 !BRiff1aa __+2
+!ftapP_5_1 \ftap+ 5, 1
+!ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 !ftapM_3_1_w192_ftapM_5_1_w192 !ftapM_7_1_r96
+!ftapP_3_1_w192_ftapP_5_1_w192_ftapP_7_1_w192_r96_L3 [\ftap+ 3, 1 w192 !ftapP_5_1 w192 \ftap+ 7, 1 : w192]3 r96
+!ftap_3_124_ftap_5_124_ftap_7_124 \ftap 3,124 \ftap 5,124 \ftap 7,124
+!BRiff1 !BRiff1a
+!BRiff1 __-5 !BRiff1aa __+5
+!ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127 !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff1 \efb 66 o3g+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff1 o3f+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff1 o3g+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff1 !ftap_3_124_ftap_5_124_ftap_7_124
+!BRiff1 o3b96& !ftapP_3_1_w192_ftapP_5_1_w192_ftapP_7_1_w192_r96_L3
+B !BRiff1
+!BRiff2 \efb 66 [
+!BRiff2 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff2 o4c+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 :
+!BRiff2 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff2 o3b96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff2 ]2
+!BRiff2 !ftap_3_124_ftap_5_124_ftap_7_124
+!BRiff2 o4d96& !ftapP_3_1_w192_ftapP_5_1_w192_ftapP_7_1_w192_r96_L3
+B !BRiff1a
+B !BRiff1aa
+B !BRiff2
+B !BRiff1
+B !BRiff3
+!BRiff3 [[
+!BRiff3 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff3 o3a96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 [
+!BRiff3 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff3 o2a96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 ]2 __+2]2 __-4
+!BRiff3 \efb+ 1]2
+!BRiff3 !ftap_3_127_ftap_5_127_ftap_7_127 [[
+!BRiff3 o3a96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff3 \ftap- 3, 1 \ftap- 5, 1 !ftapM_7_1 __-12]2
+!BRiff3 __+26 ]2 __-4
+!BRiff3 \efb 86 \fir {0 0 0 0 127 0 64 64} \evol 4
+!ftapP_4_1 \ftap+ 4, 1
+!ftapM_4_1 \ftap- 4, 1
+!ftapM_6_1 \ftap- 6, 1
+!ftapM_6_1_w192 !ftapM_6_1 w192
+!ftapM_4_1_w192_ftapM_6_1_w192_ftapM_7_1_r96 !ftapM_4_1 w192 !ftapM_6_1_w192 !ftapM_7_1_r96
+!ftapP_4_1_ftapP_6_1_ftapP_7_1 !ftapP_4_1 \ftap+ 6, 1 \ftap+ 7, 1
+!BRiff3aaa o3c+96& !ftapM_4_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3aaa !ftapP_4_1_ftapP_6_1_ftapP_7_1
+!BRiff3aa !BRiff3aaa !BRiff3aaa
+!BRiff3aa o4c+96& !ftapM_4_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3aa !ftapP_4_1_ftapP_6_1_ftapP_7_1
+!BRiff3aa !BRiff3aaa
+!BRiff3ab !ftapP_4_1_ftapP_6_1_ftapP_7_1
+!BRiff3ab !BRiff3aaa !BRiff3aaa
+!BRiff3ab o3b96& !ftapM_4_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3ab !ftapP_4_1_ftapP_6_1_ftapP_7_1
+!BRiff3ab o3f+96& !ftapM_4_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3ab !ftapP_4_1
+!BRiff3a [!BRiff3aa ]3 !BRiff3ab
+!BRiff3 !BRiff3a
+!ftapP_0_1 \ftap+ 0, 1
+!ftapP_1_1 \ftap+ 1, 1
+!BRiff3 !ftapP_0_1 [!BRiff3aa ]3 \evol -1 !BRiff3ab
+!BRiff3 !ftapP_1_1 !BRiff3a
+!BRiff3 \ftap+ 2, 1 !BRiff3a
+!BRiff3 \ftap+ 3, 1 [!BRiff3aa ]4
+!BRiff3 !ftapP_5_1 !BRiff3aa
+!BRiff3 \ftap+ 5, 4 !BRiff3aa
+!BRiff3 \ftap+ 5, 7 !BRiff3aa !BRiff3aa
+!BRiff3 \ftap+ 5, 20 [!BRiff3aa ]8
+!BRiff3 \evol +2
+!ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96 !ftapM_3_1_w192 !ftapM_6_1_w192 !ftapM_7_1_r96
+!ftapP_3_1_ftapP_6_1_ftapP_7_1 \ftap+ 3, 1 \ftap+ 6, 1 \ftap+ 7, 1
+!ftapM_7_1_ftapM_6_1_ftapP_5_1 !ftapM_7_1 !ftapM_6_1 !ftapP_5_1
+!ftapM_7_1_ftapM_6_1_ftapP_2_1 !ftapM_7_1 !ftapM_6_1 \ftap+ 2, 1
+!BRiff3ba !ftapP_3_1_ftapP_6_1_ftapP_7_1
+!BRiff3ba o4c+96& !ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3ba !ftapP_3_1_ftapP_6_1_ftapP_7_1
+!BRiff3b \fir {0 0 0 127 0 0 64 64}
+!BRiff3b o3b96& !ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3b !BRiff3ba
+!BRiff3ca o3c+96& !ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3ca !ftapP_3_1_ftapP_6_1_ftapP_7_1
+!BRiff3c !ftapM_7_1_ftapM_6_1_ftapP_5_1
+!BRiff3c !BRiff3ca
+!BRiff3d !ftapP_3_1_ftapP_6_1_ftapP_7_1
+!BRiff3d o3b96& !ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3 !BRiff3b [!BRiff3c ]4
+!BRiff3 !BRiff3ba [!BRiff3c ]5 [
+!BRiff3 !BRiff3d [!ftapM_7_1 !ftapM_6_1 !ftapP_4_1
+!BRiff3 !BRiff3d ]3
+!BRiff3 !BRiff3b [!ftapM_7_1_ftapM_6_1_ftapP_2_1
+!BRiff3 !BRiff3ca ]4
+!BRiff3 !BRiff3ba : [!ftapM_7_1_ftapM_6_1_ftapP_2_1
+!BRiff3 !BRiff3ca ]5
+!BRiff3 ]2 [!ftapM_7_1_ftapM_6_1_ftapP_2_1 !ftapP_4_1
+!BRiff3 !BRiff3ca ]5 [
+!BRiff3 !BRiff3d [!ftapM_7_1_ftapM_6_1_ftapP_5_1
+!BRiff3 !BRiff3d ]3 :
+!BRiff3 !BRiff3b [!ftapM_7_1_ftapM_6_1_ftapP_2_1 !ftapP_4_1 !ftapP_5_1
+!BRiff3 !BRiff3ca ]4
+!BRiff3 !BRiff3ba [!ftapM_7_1_ftapM_6_1_ftapP_2_1 !ftapP_4_1 !ftapP_5_1
+!BRiff3 !BRiff3ca ]5
+!BRiff3 ]2
+!ftapM_7_1_w192 !ftapM_7_1 w192
+!BRiff3e o3b96& [[!ftapM_3_1_w192 !ftapM_6_1_w192 !ftapM_7_1_w192 !ftapP_0_1 ]2 !ftapP_1_1 ]9 !ftapM_3_1_w192_ftapM_6_1_w192_ftapM_7_1_r96
+!BRiff3 [
+!BRiff3 o4c+96& [!ftapM_3_1_w192 !ftapM_6_1_w192 !ftapM_7_1_w192 ]10 w192 !ftapM_6_1_w192 !ftapM_7_1_r96 :
+!BRiff3 \fir {0 0 9 127 9 12 64 64}
+!BRiff3 !BRiff3e
+!BRiff3 \fir {0 0 0 127 0 0 96 96} \efb 80 ]2
+!BRiff3 \fir {0 0 0 127 0 0 127 127} \efb 68 \evol -1
+!BRiff3 !BRiff3e
+!BRiff3 !fir_0_0_0_127_0_127_0_127 \efb 67
+!ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 [!ftapM_3_1_w192_ftapM_5_1_w192 !ftapM_7_1_w192 !ftapP_0_1 ]2
+!BRiff3 o4c+96& [!ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 !ftapP_1_1 ]5 [w192 !ftapM_5_1_w192 !ftapM_7_1_r96 :
+!BRiff3 !fir_0_0_0_127_0_127_0_127
+!BRiff3 o3b96& [!ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 !ftapP_1_1 ]9 !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!fir_0_0_127_0_0_127_0_127 \fir {0 0 127 0 0 127 0 127}
+!BRiff3 !fir_0_0_127_0_0_127_0_127 \efb 66
+!ftapM_2_1_w192_ftapM_5_1_w192 \ftap- 2, 1 w192 !ftapM_5_1_w192
+!BRiff3 o4c+96& [!ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 !ftapP_1_1 ]5 ]2
+!BRiff3 !fir_0_0_127_0_0_127_0_127
+!ftap_2_127_ftap_5_127_ftap_7_127 \ftap 2,127 \ftap 5,127 \ftap 7,127
+!ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 !ftapM_2_1_w192_ftapM_5_1_w192 !ftapM_7_1_r96
+!ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 [!ftapM_2_1_w192_ftapM_5_1_w192 !ftapM_7_1_w192 !ftapP_0_1 ]2
+!BRiff3 o3b96& [!ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_w192_ftapP_0_1_X2 !ftapP_1_1 ]9 !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff3 \fir {16 0 127 0 -8 127 0 127} \efb 63 [!ftap_2_127_ftap_5_127_ftap_7_127
+!BRiff3 o3c+96& [!ftapM_2_1_w192_ftapM_5_1_w192 !ftapM_7_1 : w192 !ftapP_0_1 !ftapM_4_1 ]3 r96
+!BRiff3 !ftapP_4_1 ]32
+!BRiff3fa [
+!BRiff3fa !ftap_2_127_ftap_5_127_ftap_7_127
+!BRiff3fa o3c+96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 ]2
+!BRiff3fb o3a96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff3fb !ftap_2_127_ftap_5_127_ftap_7_127
+!BRiff3fb o3b96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff3f !ftap_2_127_ftap_5_127_ftap_7_127
+!BRiff3f o4c+96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 [
+!BRiff3f \ftap- 0, 16 \ftap+ 4, 8 : !BRiff3fa
+!BRiff3f \ftap+ 0, 16 \ftap- 4, 8 !ftap_2_127_ftap_5_127_ftap_7_127
+!BRiff3f o4d96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+!BRiff3f ]2 __+1 !BRiff3fa __-1
+!BRiff3f \ftap+ 0, 16 \ftap- 4, 8
+!BRiff3f !BRiff3fb
+!BRiff3f \ftap- 0, 4 \ftap+ 4, 8
+!BRiff3 \ftap 0,32 \ftap 4,-16 [!BRiff3f ]4
+!ftapP_0_1_ftapM_1_1 !ftapP_0_1 \ftap- 1, 1
+!ftap_0_6_ftap_1_0_ftap_4_0 \ftap 0, 6 \ftap 1, 0 \ftap 4,0
+B ~1,6
+B o4c+96& [\ftap- 2, 1,75 w96 \ftap- 5, 1,75  w96 \ftap- 7, 1,75 w96 \ftap- 0, 1,-12 \ftap+ 4, 2, 116]52
+B [w16 !ftapP_0_1_ftapM_1_1 ]5 r32^48 \evol -1 [
+B !ftap_2_127_ftap_5_127_ftap_7_127 !ftap_0_6_ftap_1_0_ftap_4_0
+!ftapM7_1_72_w96_ftapP_4_2_108 \ftap- 7, 1, 72 w96 \ftap+ 4, 2, 108
+B o4c+96& : [\ftap- 2, 1,72 w96 \ftap- 5, 1,72 w96 !ftapM7_1_72_w96_ftapP_4_2_108 ]55 [
+B [w16 !ftapP_0_1_ftapM_1_1 ]3 r16^48 :
+B \evol -1
+B o4c+96& GET1 [\ftap+ 2, 1 w96 !ftapP_5_1 w96 \ftap+ 7, 1 w96 \ftap- 4, 2, 0]55
+B ]2
+B ]2 GET5 [\ftap- 2, 1,72 w96 \ftap- 5, 1,72 w192 \evol -1 w192 !ftapM7_1_72_w96_ftapP_4_2_108 \evol +1]55
+B [w16 !ftapP_0_1_ftapM_1_1 \evol 1]3 r16^48
+B \efb 0 E0 ~0
+!BRiff4 r8 o3c+4f+4f+4>c+8 p64
+B !Strings8_V24
+B !BRiff4 o4d1 p48
+B !BRiff4 o3b2a2 p48
+B !BRiff4 o4d2c+4<b4
+B o3a8g+8[f+8e8]2d+8c+8<b4>f+4g+4g+4
+B V36 p48 [o3c+4]52 \edl 0 d+8c+8<b8>c+8<b8a+8g+8g+8
+B \evol 4 \efb 64
+B !GuitarB2_V24_E1 p64 ~4,2
+!ftapP_2_1_ftapM_3_1 \ftap+ 2, 1 \ftap- 3, 1
+!ftapP_2_1_ftapM_3_1_w96 !ftapP_2_1_ftapM_3_1 w96
+!ftapP_6_1_ftapM_7_1 \ftap+ 6, 1 !ftapM_7_1
+!w96_ftapP_6_1_ftapM_7_1_w96 w96 !ftapP_6_1_ftapM_7_1 w96
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 !ftapP_2_1_ftapM_3_1_w96 !ftapP_4_1 \ftap- 5, 1
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127 [!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 !w96_ftapP_6_1_ftapM_7_1_w96 ]2 r96 !fir_0_0_0_127_0_127_0_127
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96 !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 !w96_ftapP_6_1_ftapM_7_1_w96 !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 r96
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127 !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96 !fir_0_0_0_127_0_127_0_127
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L4_r96_fir_0_0_0_127_0_127_0_127 [!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 : !w96_ftapP_6_1_ftapM_7_1_w96 ]4 r96 !fir_0_0_0_127_0_127_0_127
+!ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1 !ftapP_0_1 \ftap- 2, 1 w96 !ftapP_1_1 !ftapM_4_1 w96 !ftapP_5_1 !ftapM_6_1
+!ftapP_0_1_ftapM_1_1_w96 !ftapP_0_1_ftapM_1_1 w96
+!ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1 r96
+!ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1 !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 !ftapP_4_1 !ftapM_7_1
+!ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127 [!ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1 w96]2 r96 !fir_0_0_0_127_0_127_0_127
+!ftapP_1_1_ftapM_2_1_w96_ftapP_3_1 !ftapP_1_1 \ftap- 2, 1 w96 \ftap+ 3, 1
+!ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1 !ftapM_4_1
+!ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1 !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 r96 !ftapP_5_1 !ftapM_7_1
+!ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1 \ftap- 5, 1 r96 !ftapP_6_1_ftapM_7_1
+B !fir_0_0_0_127_0_127_0_127
+B {o4b>c+}96,,41& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B {o5c+d+}96,,46& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5e96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5g+96& [!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 : !w96_ftapP_6_1_ftapM_7_1_w96 ]18 r96
+B !fir_0_0_0_127_0_127_0_127
+B o5f+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5e96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5d+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B {o5d+e}96,,25& !ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5d+96& !ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127
+B o5e96& [!ftapP_0_1_ftapM_2_1_w96_ftapP_1_1_ftapM_4_1_w96_ftapP_5_1_ftapM_6_1 r96
+B !fir_0_0_0_127_0_127_0_127 :
+B o5d+96& ]2
+B o4g+16& [!ftapP_0_1 \ftap- 2, 1 w16 !ftapP_1_1 !ftapM_4_1 : w16 !ftapP_5_1 !ftapM_6_1 w16]2 r16
+B !fir_0_0_0_127_0_127_0_127
+B o4e96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L4_r96_fir_0_0_0_127_0_127_0_127
+B o4f+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L4_r96_fir_0_0_0_127_0_127_0_127
+B o5c+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L4_r96_fir_0_0_0_127_0_127_0_127
+B o4b96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96_fir_0_0_0_127_0_127_0_127 p48 [
+B o4c+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96 ]3 p64
+B o4a+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_LB_w96_ftapP_6_1_ftapM_7_1_w96_L2_r96
+!fir_0_0_127_0_127_0_0_127 \fir {0 0 127 0 127 0 0 127}
+B !fir_0_0_127_0_127_0_0_127 p48 [
+!ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_w96_ftapP_6_1_ftapM_7_1_w96_ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 !w96_ftapP_6_1_ftapM_7_1_w96 !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1
+B o4c+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_w96_ftapP_6_1_ftapM_7_1_w96_ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 r96]3 p64
+B o4g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_w96_ftapP_6_1_ftapM_7_1_w96_ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1 r96
+!fir_0_127_0_127_0_0_0_127 \fir {0 127 0 127 0 0 0 127}
+B !fir_0_127_0_127_0_0_0_127 p48 [
+!ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1 !ftapP_0_1_ftapM_1_1_w96 !ftapP_2_1_ftapM_3_1
+B o4c+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1 !w96_ftapP_6_1_ftapM_7_1_w96 !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 ]3 p64
+B o4f+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1 !w96_ftapP_6_1_ftapM_7_1_w96 !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96
+B !fir_0_127_0_127_0_0_0_127 p48 [
+B o4c+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1 w96 !ftapP_5_1 !ftapM_7_1 w96
+B !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 ]3 p64 [
+!BRiff5aa o4c+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1
+!BRiff5a !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 !fir_0_127_0_127_0_0_0_127 p48 !BRiff5aa
+!BRiff5 !BRiff5a !BRiff5aa p64
+B o4e96& !BRiff5
+B o4f+96& !BRiff5
+B o4g+96& !BRiff5 :
+B o4f+96& !BRiff5
+B o4e96& !BRiff5a p48
+B o3b96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1 p64
+B !BRiff5aa p48 ]2
+B o4a+96& !BRiff5a !BRiff5aa
+B o4b96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96
+B o4a+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96
+B o4g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96
+B o4f+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96 [
+!BRiff6 !fir_0_127_0_127_0_0_0_127
+!BRiff6 [o3g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1 ]2
+!BRiff6 o4g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1
+!BRiff6 o3g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_2_1_ftapM_3_1_r96_ftapP_4_1_ftapM_7_1
+!BRiff6 !fir_0_0_127_0_127_0_0_127
+!BRiff6a o3g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1
+!BRiff6 !BRiff6a !BRiff6a
+!BRiff6 o4g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1
+B !BRiff6
+B !BRiff6a
+!BRiff7 !fir_0_0_0_127_0_127_0_127
+!ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1 r96 !ftapP_6_1_ftapM_7_1
+!BRiff7aa o3g+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff7a !BRiff7aa !BRiff7aa
+!BRiff7a o4g+96& !ftapP_2_1_ftapM_3_1_w96_ftapP_4_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff7a !BRiff7aa
+!BRiff7 !BRiff7a
+!BRiff7 !fir_0_0_127_0_0_127_0_127
+!BRiff7 [o3g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 ]2
+!BRiff7 o4g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+B !BRiff7
+B o3g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff8 \fir {0 127 0 0 0 127 0 127}
+!ftapP_0_1_ftapM_1_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 !ftapP_0_1_ftapM_1_1_w96 \ftap+ 3, 1 \ftap- 5, 1 r96 !ftapP_6_1_ftapM_7_1
+!BRiff8 [o3g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 ]2
+!BRiff8 o4g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff8 o3g+96& !ftapP_0_1_ftapM_1_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff8 !fir_0_0_127_0_0_127_0_127
+!BRiff8 [o3g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 ]2
+!BRiff8 o4g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+B !BRiff8
+B o3g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+!BRiff9 !fir_0_0_0_127_0_127_0_127
+!BRiff9 !BRiff7a
+!BRiff9 !fir_0_0_127_0_127_0_0_127
+!BRiff9 !BRiff6a !BRiff6a
+!BRiff9 o4g+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1
+B !BRiff9
+B !BRiff6a ]2
+
+B [
+B !BRiff6
+B o4f+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1
+B !BRiff7
+B o4b96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1 :
+B !BRiff8
+B o3f+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_5_1_r96_ftapP_6_1_ftapM_7_1
+B !BRiff9
+B o4d+96& !ftapP_1_1_ftapM_2_1_w96_ftapP_3_1_ftapM_4_1_r96_ftapP_5_1_ftapM_7_1 ]2
+
+!ftapP_3_1_w96_ftapM_6_1_w96 \ftap+ 3, 1 w96 !ftapM_6_1 w96
+!ftapP_2_1_ftapP_5_1_ftapP_7_1 \ftap+ 2, 1 !ftapP_5_1 \ftap+ 7, 1
+!ftapP_1_1_w96_B_ftapM_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1 [!ftapP_1_1 w96 : \ftap- 3, 1 w96 !ftapM_6_1 w96 ]4 r96 !ftapP_2_1_ftapP_5_1_ftapP_7_1
+!ftapM_1_1_w96_B_tapP_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1 [\ftap- 1, 1 w96 : !ftapP_3_1_w96_ftapM_6_1_w96 ]4 r96 !ftapP_2_1_ftapP_5_1_ftapP_7_1
+B o4g+96& !ftapP_1_1_w96_B_ftapM_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1
+B o4f+96& !ftapM_1_1_w96_B_tapP_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1
+B o4a96& !ftapP_1_1_w96_B_ftapM_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1
+B o4f+96& !ftapM_1_1_w96_B_tapP_3_1_w96_ftapM_6_1_w96_X4_r96_ftapP_2_1_ftapP_5_1_ftapP_7_1
+B o4g+96& [!ftapP_1_1 w96 : !ftapP_3_1_w96_ftapM_6_1_w96 ]32 r96 ~0
+
+!BRiff10 !fir_0_0_0_127_0_127_0_127
+!BRiff10 [
+!BRiff10 !BRiff1
+!BRiff10 !BRiff1a
+!BRiff10 !BRiff1aa
+!BRiff10 !BRiff2 :
+!BRiff10 !BRiff1a
+!BRiff10 !BRiff1aa
+!BRiff10 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff10 \efb 66 o3b96& [!ftapM_3_1_w192_ftapM_5_1_w192 !ftapM_7_1 : w192]3 r96
+!BRiff10 !ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff10 o4c+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff10 o4f+96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff10 o4e96& !ftapM_3_1_w192_ftapM_5_1_w192_ftapM_7_1_r96_ftap_3_127_ftap_5_127_ftap_7_127
+!BRiff10a __+12 !BRiff1aaa __-12 !BRiff1aaa
+!BRiff10 [[!BRiff10a !BRiff1aaa __-2]2 __+4]2
+!BRiff10 [!BRiff10a __-2]2 __+4
+!BRiff10 ]2
+!BRiff10 !BRiff1
+B !BRiff10 !BRiff3
+!BRiff10_3_3f_X4 !BRiff10 !BRiff3 [!BRiff3f ]4
+B _+1 !BRiff10_3_3f_X4 [
+B o4c+16& [[\ftap- 6, 4 w64]11 r64 \ftap+ 6, 52 \ftap+ 4, 4 :
+B o5c+16& ]2 ]4
+B _+3 L !BRiff10_3_3f_X4
+
+B [
+B !ftap_2_127_ftap_5_127_ftap_7_127 \ftap+ 3, 8
+B o4c+96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96 [
+B \ftap- 0, 32 \ftap+ 4, 16 : !BRiff3fa
+B \ftap+ 0, 32 \ftap- 4, 16 !ftap_2_127_ftap_5_127_ftap_7_127
+B o4d96& !ftapM_2_1_w192_ftapM_5_1_w192_ftapM_7_1_r96
+B ]2 __+1 !BRiff3fa __-1
+B \ftap+ 0, 32 \ftap- 4, 16
+B !BRiff3fb
+B \ftap- 0, 4 \ftap+ 4, 16
+B ]4
+B _+5 
+
+C @Pulse32WFF GI8 V24 p64 p~16,20 PM o2c+1& GDT1 r1 PM0 p64
+C !Strings8_V24 GIT4 p96 o4c+1c+1d+1e1
+!CRiff1 o2g+32g+32>g+16<g+32>f+16<f+32
+!CRiff2 o3d+16<d+32>d+32c+32d+32f+16
+!CRiff3 o3g+16<g+32>g+32f+32g+32a16
+C !GuitarB2_V24_E1
+C !CRiff1 !CRiff2
+C !CRiff1 !CRiff3
+C !CRiff1 !CRiff2
+C !CRiff4
+!CRiff4a o2g+32g+32>g+32<g+32
+!CRiff4 [o3e32<e32e32>f+32<f+32f+32]2
+!CRiff4 o3e32<e32>f+32<f+32
+!CRiff4 [
+!CRiff4 [!CRiff4a ]3
+!CRiff4 o2g+32g+32>f+32<b32 ]4
+!CRiff4 [!CRiff4a ]16
+!CRiff4 [o3f+32g+32<[g+32]4>g+32<[g+32]5>[f+32]4]4
+!CRiff4 [o3g+8.f+4^16]4
+!CRiff4 [o2g+16]32
+!CRiff4b o3g+32<g+32g+32>a32<a32a32>e32f+32
+!CRiff4 [!CRiff4b ]4
+C [o3g+1^1]2 o3g+96& GET1 r1......^192 o3g+96& GET5 r1......^192 E0
+!CRiff5 !Strings8_V24 p96
+!CRiff5 r4 o3g+4e4g+4
+C !CRiff5
+C \edl 48 \fir {127 0 0 0 0 0 0 0} \efb 100 \evol 16 r4 E1
+!trumpet_2_V48_vb32_2 @trumpet_2 V48 ~32,2
+!CRiff6a !trumpet_2_V48_vb32_2 p64 E1 [o7c+16r48]2 [o7c+48r48]2
+!CRiff6 !CRiff6a GF32 q254,I4 o7c+2 q0 @trumpet_2
+C !CRiff6 ~0 E0
+C !CRiff5
+C r4 !CRiff6a o7d4<b4 ~0 E0
+C !CRiff5
+C r4 E1 p64 !CRiff6
+C o7d8c+8<[b8a8]2g+8f+8f+2g+2 ~0 E0
+C @Strings8 V36 p96 [o2g+4]52 o2b8[a+8g+8]2f+8c+8c8
+!Crash2_A15_7_7_18_V128_p64_E0 @Crash2_A15_7_7_18 V128 p64 E0
+!Crash2_A15_7_7_18_V128_p64_E0_o5fS16 !Crash2_A15_7_7_18_V128_p64_E0 o5f+16
+C !Crash2_A15_7_7_18_V128_p64_E0_o5fS16 V96
+C @Bongo [p48 o3f+16 @Tom5 p64 o3f+16 @Bongo p96 o3f+16: p64 <b16]8
+C !Crash2_A15_7_7_18_V128_p64_E0_o5fS16
+C !GuitarB2_V24_E1 p96 [[o3g+16]3 r16]3 [o3g+16]3
+C [!Crash2_A15_7_7_18_V128_p64_E0 o5f+32 !GuitarB2_V24_E1 p96 o3g+32:g+32]5 f+32g+32
+C [!Crash2_A15_7_7_18_V128_p64_E0 o5f+32 !GuitarB2_V24_E1 p96 o3g+32g+32]4 o4f+32f32d+32c+32
+!CRiff7aa o3d+32d+32>d+32
+!CRiff7a !CRiff7aa o3d+32
+!CRiff7 !CRiff7a
+!CRiff7 !CRiff7aa o4c+32
+!CRiff7 !CRiff7a
+!CRiff7 !CRiff7aa
+C [!CRiff7a ]16
+C !CRiff7 o4f+32
+C !CRiff7 o3g+32
+C !CRiff7 o4f+32
+C o4d+8c+8e8c+8
+C o4d+1
+
+!CRiff8 [
+!CRiff8 !CRiff1 !CRiff2
+!CRiff8 !CRiff1 !CRiff3 :
+!CRiff8 !CRiff1 o3g+16<g+32>f+16g+32>c+32<b32
+!CRiff8 [o3g+32<g+32g+32>f+32<f+32f+32]2 o3g+32<g+32>f+32<f+32
+!CRiff8 ]2
+!CRiff8 !CRiff1 !CRiff2
+C !CRiff8 !CRiff4
+C _+1 !CRiff8 !CRiff4 [!CRiff4b ]4
+C [o3g+4>g4]4
+C _+3 L !CRiff8 !CRiff4 [!CRiff4b ]8
+C _+5
+
+D @Pulse32WFF GI1 V0 o1c+1& GI0 r1^1^1
+D GF72 o1b2<b2 o1c+2>c+2
+!DRiff1 [o5f+16.]4f+16f+16
+D !Crash2_A15_7_7_18_V128_p64_E0
+D o5f+2f+2f+4..f+16 !DRiff1
+!DRiff2 [o5f+2f+4..f+16]2
+!DRiff3 !Crash2_A15_7_7_18_V128_p64_E0
+!DRiff3 o5f+2!DRiff1 o5f+2f+4^16. @Tom5_A15_7_7_18 V128 o5c64c64c32<f+32c32<f+32
+!DRiff3 !Crash2_A15_7_7_18_V128_p64_E0
+!DRiff3 [o5f+8.f+8.f+8]2 [o5f+8.f+8.f+16f+16]2 f+32
+!DRiff4a K0 l32 o3b&>c+&g+&c+&b&a&g+&f+&e&d+&c+&<b&ab>c+ d+8e16 f+8.b8
+!DRiff4ba l64 o3c+&d+&
+!DRiff4ba_X16 l64 [!DRiff4ba ]16
+!DRiff4b l64 [[!DRiff4ba_X16 __-2]2__+9]2
+!DRiff4 @SineWave16_A8_7_7_12 V0 !DRiff4a
+!DRiff4 l32 o5c+&<g+&>c+&d+&e&c+&e&f+&g+&f+&e&d+&c+&d+&e&d+& GIT4
+!DRiff4 l32 o5c+&<g+&e&c+&<g+&e&>b&f+&d+&<b&f+&d+&<b&f+&d+&<b
+!DRiff4 GF127 l64 !DRiff4b __-10
+D !DRiff2
+D !DRiff3 !DRiff4
+D @SuperMiniGlitchNoise2 P512,1
+D l1 @Strings8 V48 o2c+^^^^^^^
+D l1 o2c+dc+<b>c+d d8c+8<[b8a8]2g+8f+8f+4>b4>c+4c4
+D @PianoC2_16_A15_7_7_13 V96 [o3c+4]8
+D @sine_A8_7_7_5 V48 [o2c+1^1]4
+!DRiff5 [{o4c+d+}12 <g+12a+24b24 : {o4c+d+}2,,12^16 e16d+16<b16
+!DRiff5 {o3b>c+}12 <b12>c+24<b24 a+4f+8g+8a+12b12>c+12
+!DRiff5 ]2 {o4c+d+}8,,12 {o4f+g+}8,,12 f+12e12d+12 e32d+32c+32<g+32e32g+32>c+32e32
+D @SineWave16_A8_7_7_12 V0 !DRiff5
+D o4d+32d+32c+32c+32[b32b32a+32a+32:g+32g+32a+32a+32]2
+D o3g+16f+16e16d+16d+8g+8
+!DRiff6a o2c+32g+32>d+32<b32a+32b32
+!DRiff6 [
+!DRiff6 !DRiff6a o2a+32f+32
+!DRiff6 !DRiff6a o2a+32g+32]5
+!DRiff6 !DRiff6a o3c+32<a+32
+!DRiff6 !DRiff6a o3c+32<b32
+!DRiff6 o2a+48g+48[a+48b48]2>c+48<b48>[c+48d+48]2e48d+48[e48f+48]2g+48f+48[g+48a+48]2
+!DRiff6 o3b16.g+48a+48b48>c+16.<a+48b48>c+48d+16<b48>c+48d+48e48f+48g+48
+!DRiff6 o5d+8.. c+64<b64 >c+8.. <b64a+64
+!DRiff6 o4b48a+48[g+48f+48]2[f48d+48]2<g+48[a+48b48]2>c+48d+48f48f+48g+48a+48b48>c+48d+48
+!DRiff6 o5f+8.. f64d+64 f8.. d+64c+64
+!DRiff6 o5d+48c+48d+48[c+48<b48]2a+48b48a+48g+48a+48[g+48f+48]2f48f+48f48d+48f48d+48c+48d+48
+!DRiff6 [o4c+48<b48>c+48<b48a+48b48:a+48g+48a+48[g+48f+48]2f48f+48[f48d+48]2c+48d+48 __-12]3 _-0
+!DRiff6 o1a+48b48>c+48d+48f48f+48g+8>d+8c+16<b32a+32
+!Pulse8WBF_V12 @Pulse8WBF V12
+D !Pulse8WBF_V12
+D !DRiff6
+D !Crash2_A15_7_7_18_V128_p64_E0_o5fS16
+D !Pulse8WBF_V12 o2g+16
+D !Crash2_A15_7_7_18_V128_p64_E0_o5fS16
+D !Pulse8WBF_V12 o2f+16
+D !Crash2_A15_7_7_18_V128_p64_E0_o5fS16
+D !Pulse8WBF_V12 o2a16
+D !Crash2_A15_7_7_18_V128_p64_E0_o5fS16
+D !Pulse8WBF_V12 o2b16
+D !Crash2_A15_7_7_18_V128_p64_E0 o5f+16^48
+D !Pulse8WBF_V12 o2g+48f+48g+2. r8
+!DRiff7 @SineWave16 V0 l64 !DRiff4b
+!DRiff7 __-5 !DRiff4ba_X16
+!DRiff7 __+3 !DRiff4ba_X16
+!DRiff7 __+2 !DRiff4ba_X16
+!DRiff7 __+5 !DRiff4ba_X16
+!DRiff7 __+2 [!DRiff4ba ]63 o3c+&d+ _+0
+!DRiff8 l64 [[!DRiff4ba ]8 __+1]2
+!DRiff8 [[!DRiff4ba ]4 __+1]3 [!DRiff4ba ]3 o3c+&d+
+D !DRiff7
+D !DRiff3 !DRiff4 !DRiff8
+D _+1 !DRiff7 _+0 !DRiff3 _+1 !DRiff4 !DRiff8 _+0 @SuperMiniGlitchNoise2 P512,1^4
+D !trumpet_2_V48_vb32_2 p48 o7d4
+!p64_vb0_o5d4_p48_trumpet_2_V48_vb32_2 p64 ~0 o5d4 p48 !trumpet_2_V48_vb32_2
+D !p64_vb0_o5d4_p48_trumpet_2_V48_vb32_2
+D o7d+4
+D !p64_vb0_o5d4_p48_trumpet_2_V48_vb32_2
+D o7e4
+D !p64_vb0_o5d4_p48_trumpet_2_V48_vb32_2
+D o7f4 ~0
+D _+3 !DRiff7 _+0 !DRiff3 _+3 L !DRiff4 !DRiff8 _+0 @SuperMiniGlitchNoise2 P512,1^1
+D _+5 !DRiff7 _+0 !DRiff3 _+5
+
+E @Pulse32WFF GIT8 V36 p~16,32 PM o1c+1^1^1^1
+E o1b1>c+1 PM0 p64
+E @Tom5_A15_7_7_18 V128 o4c2c2c4..c16[c16.]4c16c16c1^1
+!ERiff1a @SineWave16Glitch l64 [o4c+<b>[c+d+]2ed+ef+e:[f+g+]2ag+[ab]2 __+12]2 __-12
+!ERiff1a [o5f+64&{g+}16,,255^64]3 o5f+32[e32d+32]2c+32<g+32
+!ERiff1a l32 o5ec+<g+>d+<bf+>c+<g+ebf+d+c+ebf+
+!ERiff1a l32 o4g+ec+f+ec+ed+<b>d+<bg+>c+<bag+
+!ERiff1 V32 !ERiff1a
+!ERiff1b [@Triangle16_DBH2_2 o3f+32&{g+}8,,16^32 o3g+32&{b}8,,16^32 a+16 : f+32 @Triangle16_DBH3_2 f+32]2
+!ERiff1b o4c+16
+!ERiff1b o4d+32<b32 @Triangle16_DBH3_2 f+32
+!ERiff1b @Triangle16_DBH2_2 o4c+32<g+32 @Triangle16_DBH3_2 g+32
+!ERiff1b @Triangle16_DBH2_2 o3b32g+32 @Triangle16_DBH3_2 >c+32
+!ERiff1b @Triangle16_DBH2_2 o3a+32f+32 @Triangle16_DBH3_2 b32
+!ERiff1b @Triangle16_DBH2_2 o3g+32f+32b32a+32
+!ERiff1b o3g+32e32 @Triangle16_DBH3_2 >c+32
+!ERiff1b @Triangle16_DBH2_2 o3f+32d+32 @Triangle16_DBH3_2 b32
+!ERiff1b @Triangle16_DBH2_2 o3e32c+32 @Triangle16_DBH3_2 g+32
+!ERiff1b @Triangle16_DBH2_2 o3d+32<b32 @Triangle16_DBH3_2 >f+32
+!ERiff1b @Triangle16_DBH2_2 o3c+32 @Triangle16_DBH3_2 b32a32b32
+!ERiff1 V36 !ERiff1b o4c+32
+!ERiff1 @Pulse16WFF V16 PM __+19 !DRiff4a __-19
+!ERiff1 l32 o6c+16&   c+&d+&e16& e&f+&g+&f+&e&d+&c+&d+&e&d+&
+!ERiff1 [l64 o6c+&<c+&g+&<g+&>e&<e& __-12]2
+!ERiff1 [l64 o7b&:<b&>f+&<f+&>d+&<d+& __-12]4 o6b __+60
+!ERiff1caba l64 !DRiff4ba __-7
+!ERiff1caa l64 [[o3c+&d+&__+5]2__+2]4
+!ERiff1cab l64 [!ERiff1caba !ERiff1caba __+2]4
+!ERiff1ca l64 !ERiff1caa !ERiff1cab
+!ERiff1c l64 [[!ERiff1ca __-2]2__+9]2
+!ERiff2 @Pulse16WFF V16 {o6bo2b}2& p~32,12
+!ERiff2 @SineWave8 {o0co1b}16 [{o0bo2b}16 __+12]5 {o0bo2b}16 {o1bo2b}16 _+0 p~16,12
+E !ERiff1 !ERiff1c
+E _+0 !ERiff2
+!ERiff3 o5g+48c+48<g+48c+48g+48>c+48
+E PM0 @PIANO_C5 V12 [!ERiff3 ]72 [_+1 [!ERiff3 ]8 : _+0 [!ERiff3 ]8]3
+E !ERiff3 _+3 !ERiff3 _+5 GF96 !ERiff3 _+6 [!ERiff3 __+2]4 _+13 !ERiff3 _+0
+E @Flute1 GF96 V8 E1 [o6a48b48>c+48d48e48f+48]4
+!ERiff4 o7d48^192e48^192f+48^192g+48
+E [o7c+48^192 !ERiff4 ]2
+E [o7c48^192 !ERiff4 ]2 E0 p64
+E @TimpaniB_A15_7_7_13 V128 [o3c+4]8
+E @Clarinet V48 PM1 o2c+1^1>c+1^1 V18 p~16,24
+E [[o4c+32&>g+32&c+32&>g+32&>c+32&<<g+32&>c+32&<:g+32&]8 g+32 __-12]2 _-0 p64
+E @Pulse16WFF V16 PM !DRiff5
+E o4d+32a+32c+32<f+32b32e32a+32f+32g+32c+32a+32f+32b32g+32a+32f+32
+E o3g+32&c+32f+32&<b32>e32&a32d+32&g+32g+8>d+8
+E PM0
+E !Strings8_V24 [o3c+4]12
+!ERiff5 o5f+32f+32<f+32>c32c32<c32
+E @Tom5 V160 !ERiff5 _-12 !ERiff5 _-0 o5c32c32<c32>c32
+E !ERiff5 !ERiff5 [o5f+32]4
+E !Crash2_A15_7_7_18_V128_p64_E0 o5f+8 !Strings8_V24 o3c+8d+8f+8f8c+8 [o3d+4]11 d+8c+8e8c+8d+1 
+!ERiff6 l64
+!ERiff6 __-17 !ERiff1ca
+!ERiff6 __+3 !ERiff1ca
+!ERiff6 __+2 !ERiff1ca
+!ERiff6 __+5 !ERiff1ca V-4
+!ERiff6 __+2 [!ERiff1caa : !ERiff1cab V-4 ]4
+!ERiff6 [!ERiff1caba !ERiff1caba __+2]3 !ERiff1caba c+&d+ __-10 PM0 p64
+!ERiff7 l64 [!ERiff1caa __-47]2
+!ERiff7a l64 o2c+&d+&__+5
+!ERiff7 @Pulse8WFF [[!ERiff7a !ERiff7a __+2]2 __-11]3 !ERiff7a !ERiff7a __+2 !ERiff7a o2c+&d+
+!ERiff6_1_1c_M10 !ERiff6 !ERiff1 !ERiff1c __-10
+!Pulse16WFF_GF112_V16_PM_ERiff1c_Pulse8WFF_GF112 @Pulse16WFF V16 GF112 PM !ERiff1c @Pulse8WFF GF112
+E !Pulse16WFF_GF112_V16_PM_ERiff1c_Pulse8WFF_GF112 V20 !ERiff6_1_1c_M10 !ERiff7
+E _+1 !Pulse16WFF_GF112_V16_PM_ERiff1c_Pulse8WFF_GF112 V16 !ERiff6_1_1c_M10 !ERiff7 _+0 !ERiff2
+E {o6bP0}4,,127
+!trumpet_2_V48_vb32_2_p96 !trumpet_2_V48_vb32_2 p96
+E !trumpet_2_V48_vb32_2_p96 o6g+4
+!Strings8_V24_p64_vb0_o3d4 !Strings8_V24 p64 ~0 o3d4
+E !Strings8_V24_p64_vb0_o3d4
+E !trumpet_2_V48_vb32_2_p96 o6a4
+E !Strings8_V24_p64_vb0_o3d4
+E !trumpet_2_V48_vb32_2_p96 o6a+4
+E !Strings8_V24_p64_vb0_o3d4
+E !trumpet_2_V48_vb32_2_p96 o6b4 ~0 p64
+E _+3 !Pulse16WFF_GF112_V16_PM_ERiff1c_Pulse8WFF_GF112 V16 !ERiff6_1_1c_M10 L !ERiff7 _+0 !ERiff2 !ERiff2
+E _+5
+E @Pulse8WFF GF112 V16 PM p~16,12 __-12 !ERiff1c
+E @Pulse4WFF GF112 V20 !ERiff6 __+12
+E !ERiff1 @Pulse8WFF GF112 __-12 !ERiff1c __+2 @Pulse16WFF GF96
+
+F @fingerbass32 V120
+!FRiff1a o4c+32<[c+32]3
+!FRiff1 o3[c+32]6>c+32<[c+32]5 !FRiff1a
+F [!FRiff1 ]8
+F _-2 [!FRiff1 !FRiff1 _-0]2
+F o3c+16r4.<b16>c+16r4.d16
+F [o3c+48r96 ]14 o3b16
+!FRiff2a [o3c+32]32
+!FRiff2baa o4c+32<c+32
+!FRiff2ba !FRiff2baa o3c+32
+!FRiff2b [!FRiff2ba o4d32<d32d32a32b32]4
+!FRiff2 [o3a32<a32a32>b32<b32b32]2 o3a32<a32>b32<b32
+!FRiff2 __+5 [
+!FRiff2 [!CRiff4a ]3
+!FRiff2 __-2 !CRiff4a __+2 ]4
+!FRiff2 [!CRiff4a ]16 __-5
+!FRiff2 [o3b32>[c+32<[c+32]4]2c+32__-2 !FRiff1a __+2]4
+!FRiff2 [o4c+32<[c+32]5b32<[b32]9]4 q2
+!FRiff2 !FRiff2a
+!FRiff2 [!FRiff2baa ]16 q0
+!FRiff2 !FRiff2b
+F !FRiff2 q2
+F [!FRiff2a ]9 [[o3d32]32:!FRiff2a ]3
+F [_+1 !FRiff1a _+0 !FRiff1a _-2 !FRiff1a : _+0 !FRiff1a ]2
+F _-4 !FRiff1a _-2 [!FRiff1a ]4 _+0 !FRiff1a !FRiff1a _-1 !FRiff1a !FRiff1a _-0 q0
+F [o3c+8...r64]8 q2
+F !FRiff2a !FRiff2a [!FRiff1a ]72
+F [[o4d+32<d+32 __-2]3 _-0 : !FRiff2baa ]3
+F o3a+32<a+32 _-5 !FRiff1a !FRiff1a _+0
+F [!FRiff1a ]24 q0 [!FRiff2ba ]5 o4c+32 [!FRiff2ba ]4 o4c+32d+32f32f+32
+F _+7 [!FRiff1a ]8 _+0 [!CRiff4a ]20
+F _+7 !FRiff1a _+5 !FRiff1a _+8 !FRiff1a _+5 !FRiff1a
+F _+12 [!CRiff4a ]8 _+0
+!FRiff3 [__+5 [!CRiff4a ]7 __+1 !CRiff4a :
+!FRiff3 __-1 [!CRiff4a ]4 __-5
+!FRiff3 [!FRiff2ba __-2 !FRiff2ba __+2]2 !FRiff2baa o3b32<b32
+!FRiff3 ]2 __-6
+!FRiff3 [o3c+32c+32:!FRiff2baa ]4 o3b16
+F !FRiff3 !FRiff2
+F _+1 !FRiff3 !FRiff2 !FRiff2b
+F [o3c+8..r32>c+8..r32]2
+F [o3c+16..r64[c+32r96]3__+12]2
+F [o1[c+32r96]6__+12]2
+F _+3 L !FRiff3 !FRiff2 !FRiff2b !FRiff2b
+F _+5
+
+G l1 r^
+G !Strings8_V24 GIT4 o4eef+g+
+G r^^^^48
+G !GRiff1
+!GRiff1 V12 ~16,2 !ERiff1a !ERiff1b o4c+96 ~0
+!GRiff1 @Strings8 o4e8^32d+4^16[e8.d+4^16]3 _+0
+!GRiff1 [!Crash2_A15_7_7_18_V128_p64_E0_o5fS16 ]32
+!GRiff1 [o5f+16.f+16.f+16]4
+G A15,7,7,12 o4c1^1^1^1^1^1^1^1^1
+G ^4 _-4 !CRiff6
+G r1^4 !CRiff6a o7c+4c+4
+G r1^4 !CRiff6 _-0
+G o6a8a8[g+8f+8]2e8d+8d2d+4d+4 E0 ~0
+G l1 r^^^^^^^^^ \efb 0
+G @PianoC2_16_A15_7_7_13 V48 [o3c+2>c+2]3
+G [o3b8a+8g+8:a+8]2g+8 
+G !Strings8_V24 [o2g+4]12 [o3c+4]4 [o2g+4]14 g+8f+8a8f+8g+1
+!GRiff2 !Crash2_A15_7_7_18_V128_p64_E0 [[o5f+2]3!DRiff1 ]2
+!GRiff2 !DRiff2 r48
+G !GRiff2 !GRiff1
+G !GRiff2 _+1 !GRiff1
+!GRiff3 [[o5f+16]3f+32f+32]4
+G !GRiff3
+G [o5c4]4 [c8]4 [c16]4 [f+48]12
+G !GRiff2 _+3 L !GRiff1 !GRiff3 [o5f+32]24 [o5f+48]12
+G !GRiff2 _+5 
+
+H l1 r^^^^^^^^^^^^^
+H !HRiff1
+!HRiff1 @Strings8 V12 [o4c+8.<b4^16]4
+!HRiff1 V24 [o3c+4]8
+!HRiff1 [o3c+16.d16.<b16]4
+H l1 r^^^^^^^
+H o2g+ag+f+g+a>d8c+8<[b8a8]2g+8f+8d4>d4<g+4g+4
+H l1 r^^^^^^^^^
+H @GuitarB2_A15_7_7_22 V9 p~32,12 [o5g+16c+16f+16c+16]12
+H [o5b32<b32>a+32<a+32>g+32<g+32:>a+32<a+32]3
+H o5f+32<f+32>g+32<g+32>a+32<a+32>b32<b32>a+32<a+32 r24
+H @Pulse8WBF GF96 V8 p64 ~2,4
+H !DRiff6 r16o2g+16r16f+16r16a16r16b16r16^48o2g+48f+48g+2. ~0 r16^48
+!HRiff2 @Strings8 V18 [o3c+2]7 o2b2 [o3c+2]12
+H !HRiff2 !HRiff1
+H _+1 !HRiff2 !HRiff1
+!HRiff3 [o3c+16.d16.<b16]4
+H !HRiff3
+H o3c+4 [o4c+4<<g+4]3 o4c+4
+H _+3 L !HRiff2 !HRiff1 !HRiff3 !HRiff3
+H _+5 

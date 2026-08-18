@@ -561,6 +561,44 @@
       "last_octave": 7,
       "envelope": "gain F127",
       "comment": null
+    },
+    {
+      "name": "Triangle16_DBH2_2",
+      "source": "samples/KungFuFurby/Triangle16.wav",
+      "freq": 1000.0,
+      "loop": "dupe_block_hack_filter_2",
+      "loop_setting": 2,
+      "evaluator": "default",
+      "ignore_gaussian_overflow": false,
+      "first_octave": 0,
+      "last_octave": 7,
+      "envelope": "gain F127",
+      "comment": null
+    },
+    {
+      "name": "Triangle16_DBH3_2",
+      "source": "samples/KungFuFurby/Triangle16.wav",
+      "freq": 1000.0,
+      "loop": "dupe_block_hack_filter_3",
+      "loop_setting": 2,
+      "evaluator": "default",
+      "ignore_gaussian_overflow": false,
+      "first_octave": 0,
+      "last_octave": 7,
+      "envelope": "gain F127",
+      "comment": null
+    },
+    {
+      "name": "Pulse4WFF",
+      "source": "samples/KungFuFurby/Pulse4WFF.brr",
+      "freq": 1000.0,
+      "loop": "none",
+      "evaluator": "default",
+      "ignore_gaussian_overflow": false,
+      "first_octave": 0,
+      "last_octave": 7,
+      "envelope": "gain F127",
+      "comment": null
     }
   ],
   "samples": [],
@@ -717,6 +755,10 @@
     {
       "name": "FactoryTheme",
       "source": "songs/FactoryTheme.mml"
+    },
+    {
+      "name": "FinalBossTheme",
+      "source": "songs/FinalBossTheme.mml"
     }
   ]
 }
