@@ -122,30 +122,29 @@ D _+0 [l8 o2b>b>b<b]4
 !ERiff1 l2 o2b>cc+d
 E !Strings8_V48 p56 !ERiff1
 E L
-!ERiff2 l2 [o2bab:>c]6 o3d
+!ERiff2a l2 o2ab
+!ERiff2 l2 [o2b !ERiff2a :>c]6 o3d
 !ERiff2 l4 o2b>d<bab>c+de
 E V48 p56 !ERiff2
-E V72 p64 o2b1^1
+E [V72 p64 o2b1^1 :
 E V48 p56 l2 o3ede[[f+g]2:a
 E o3baa]2f
 !ERiff3 l2 o3f+gg+a
 E !ERiff3
-E V40 _+7 !ERiff3 _-0
-E V72 p64 o2b1^1
+E V40 _+7 !ERiff3 _-0 ]2
 
 F !Strings8_V48 p72 _-5 !ERiff1
 F L
 F V48 p72 !ERiff2 __M+5
-F V72 p64 o1b1^1
+F [V72 p64 o1b1^1 :
 F V48 p72 l2 o2bab>d[ed]3
 F o3f+[de]2c
-F _-5 !ERiff3 _-0
-F V40 !ERiff3 _-5 
-F V72 p64 o1b1^1
+F !ERiff3 _-0
+F V40 !ERiff3 _-5 ]2
 
 G !Strings8_V48
 G l1 r^^^^^^^^^^^^^^^^^^^2 L
-G l2 [o2[ab]2:>f+
+G l2 [!ERiff2a !ERiff2a :o3f+
 G o3gf+d<]2r
 G r1^1
 G _-5 !ERiff3 _-0
@@ -153,5 +152,5 @@ G l1 r^^^^^^^^^^^^^^^^^^^2
 
 H !Strings8_V48
 H l1 r^^^^^^^^^^^^^^^^^^^^^2 L
-H [l2 o2ab]2
+H !ERiff2a !ERiff2a
 H l1 r^^^^^^^^^^^^^^^^^^^^^^^^^^^
