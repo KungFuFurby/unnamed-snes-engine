@@ -35,7 +35,7 @@ A L l4 V32 GF127 p48 [o3e>e]3 e2
 !Strings8_V64_NoVib @Strings8 V64 ~0
 A !Strings8_V64_NoVib p64 l32 [!ARiff1 ]56
 A _+5 [!ARiff1 ]6
-A _+7 [!ARiff1 ]2 _+0
+A _+7 !ARiff1 !ARiff1 _+0
 A [!ARiff1 ]16 [V-4 !ARiff1 ]16
 A l1 r^^^^^^^^^
 A @Strings8Detache V32 [l8 o4[e]7e16:d16]10 o4g16
@@ -54,17 +54,18 @@ B @Clarinet p64 r2  !BRiff1 r2 _+2 !BRiff1 _+0 r2 !BRiff2 r2 _+2 !BRiff1 _+0
 B [!BRiff1 _+2 !BRiff1 _+0 !BRiff2 : _+2 !BRiff1 _+0 ]2 V0 l64 [V+2o5d&e&]8 [V-2o5d&:e&]8 e
 B [V8 l4 ro4b>bef+d : l4 o4b >c+8<a8]2
 B l4 o5ef+
-B @Flute1 V48 ~6,2 l8 o5d^c+dc+^<a^ g<b>g^^f+de
+!BRiff3 l8 o5g^f+gf+^d^
+B @Flute1 V48 ~6,2 l8 _-5 !BRiff3 _-0 o4g<b>g^^f+de
 B l8 o5ef+gf+edc<b16g16 ae16c16<e16a16>e f+g+f+16d16c+16d16
-!BRiff3 ?@Flute1 GI9 o4g2. GFT127 {b f+}4,8& f+2& GET14
-B w16 ~0 !BRiff3 r4..
+!BRiff4 ?@Flute1 GI9 o4g2. GFT127 {b f+}4,8& f+2& GET14
+B w16 ~0 !BRiff4 r4..
 B ~16,2 o4d2. GFT127 {f+ c+}4,8& c+2& GET14 r2
 !GET9_R1_1 l1 GET9 r^
 B !Strings8_V64_NoVib p80 l1 o1b^& !GET9_R1_1 p64
 B l1 r^^^
-!BRiff4 @PIANO_C5 [[l16 ro3e>b<b o2b>b>d<d o4c+<c+a<a : o3gf+df+]2 l16 o4dc+<a>e]8
+!BRiff5 @PIANO_C5 [[l16 ro3e>b<b o2b>b>d<d o4c+<c+a<a : o3gf+df+]2 l16 o4dc+<a>e]8
 B V24
-B !BRiff4
+B !BRiff5
 B !Strings8_V24 p80 o4c1d1e1d1c1d1d1d+2e4<b4
 
 C l1 r^^^^^^^^^^^^^^^^
@@ -73,14 +74,13 @@ C r4^32 o3a16a16g16f+16 r8.. l16ro4c<ba l24[rbbag:a]2f+ l32[[e]3gef+:ga]2ab
 C l8o3a[aggaabb: r]2
 C L [@TimpaniB l8 o3 V128 e V48 e GF127 V96 e^]3 e4 V16[e64V+6]16
 C l1 A15,7,7,9 o3e^^^^^^^
-!CRiff1 l8 o5g^f+gf+^d^
 C @Flute1 V48 ~6,2
-C [!CRiff1 l8 o4beb^^>d& [c+64&d64&]4 c+16 :o4a16
-C !CRiff1 l8 o5b^ag l24a[gf+]2 e f+ed l48 c+def+ga]2
+C [!BRiff3 l8 o4beb^^>d& [c+64&d64&]4 c+16 :o4a16
+C !BRiff3 l8 o5b^ag l24a[gf+]2 e f+ed l48 c+def+ga]2
 C o5e16
 C o4a8 l64 ^b>cde f+ga l16b^a^ ga[gf+]2ed
 C l16 o5c<bae <a>ega b>c+dc+<bf+ef+
-C ~16,2 [!BRiff3 r2]2
+C ~16,2 [!BRiff4 r2]2
 C !Strings8_V64_NoVib p48 l1 o2e^& !GET9_R1_1 p64
 C l1 r^^^^^
 C @PianoC2_16 V64 [o3e1]14
@@ -103,7 +103,8 @@ E l1 o1a.b2
 E l1 o1e^^^e^& !GET9_R1_1
 E l1 r^^^^^^^
 E @Flute1 V8 GF96 ~8,2
-E [[o6b16b32a32b16a16 o6e16e32d32e16d16 o5b16b32a32b16 :
+!ERiff1 o6b16b32a32b16
+E [[[!ERiff1 o6a16 _-7 ]2 _-12 !ERiff1 _-0 :
 E o6d16 c+16d16c+16e64f+64g64a64]2
 E o5a16g16f+16e16 : o6e16]6 o5b16
 E @PianoC2_16 V64 ~0 [o3a2]12 [o3b2]3 o3b4b4 [o3e4]6 o3e2
@@ -148,5 +149,5 @@ H l1 r^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ L
 H @Strings8 V80 l1 o0e^& !GET9_R1_1
 H l1 r^^^^16.
 H V9
-H !BRiff4
+H !BRiff5
 H l1 r^^^^^^^^^^^^^^^^^^^^^^^^^^^^^2..^32
