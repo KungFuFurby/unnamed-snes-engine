@@ -180,8 +180,8 @@ B @sine_A7_7_7_4 V0
 B !BRiff2
 !BRiff3a l32 [o4d&e&]16
 !BRiff3 !BRiff3a __-2 !BRiff3a __+2
-B @sine _+0 !BRiff3 _+5 !BRiff3 _+3 !BRiff3 _+0 !BRiff3
-B _-3 !BRiff3 _+2 !BRiff3 !BRiff3 _-3 !BRiff3 _+0
+B @sine _+0 !BRiff3 _+5 !BRiff3 _+3 [!BRiff3 __-3]3
+B _+2 !BRiff3 !BRiff3 _-3 !BRiff3 _+0
 B l1 GET4 o3e^^^^^^^
 B o3e1& {d}1,,1 [l32 o3d&:e&]96 e
 B l1 @Pulse32WFF GF48 o2e^^^^^^^
@@ -228,9 +228,9 @@ B [o6a32b8^32]4 l32 o6af+ed<baf+e @sine_A9_7_7_15 V0 p64
 B !BRiff7 o5b4.& GIT7 {f+}4
 B !BRiff7 {o5bf+}4.,4,64& GIT7 r4
 B @SineWave16
-B [l48 [o2a&b&]2>[e&f+&]2[a&b&]2>[e&f+&]2[a&b&]2>:[e&f+&]2]3 e&f+&e&f+
+B [_+0 l48 [[o2a&b&]2>:[e&f+&]2__+12]3e&f+&e&:f+&]3 f+ _+0
 B A9,7,7,16 l8 o4c<aga
-B [~0 : l24 o6f+<bf+<bf+<b ~4,4 [o3b12]3]4
+B [~0 : l24 [o6f+<b __-12]3 _+0 ~4,4 [o3b12]3]4
 B {o3b<b}2
 
 !Strings8_V24 @Strings8 V24
